@@ -110,6 +110,7 @@ bool BaseServer::Start()
 	HANDLE t = CreateThread(NULL, 0, ThreadProc, (LPVOID)this, 0, NULL);
 
 	if (t == NULL) return false;
+	CloseHandle(t);
 
 	return true;
 }
